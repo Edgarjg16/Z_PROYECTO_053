@@ -1,0 +1,97 @@
+@Metadata.layer: #CORE
+
+@UI.createHidden: true
+
+@UI.headerInfo: {
+        typeName: 'History',
+        typeNamePlural: 'History',
+        title: {
+        value: 'HisId'
+                }
+        }
+ 
+@UI.presentationVariant: [{
+sortOrder: [{
+                by: 'HisId',
+                direction: #ASC
+            }]
+}]
+ 
+annotate entity zi_dt_inct_h_053
+with
+{     
+    @UI.lineItem: [
+            {
+            position: 10,
+            importance: #HIGH
+            }
+        ]
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    HisUuid;
+     
+    @UI.lineItem: [
+            {
+            position: 20,
+            importance: #MEDIUM
+            }
+        ]
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    IncUuid;
+
+    @UI.lineItem: [
+            {
+            position: 30,
+            importance: #HIGH
+            }
+        ]
+    HisId;
+
+    @UI.lineItem: [
+            {
+            position: 40,
+            importance: #LOW
+            }
+        ]
+    PreviousStatus;
+    
+    @UI.lineItem: [
+            {
+            position: 50,
+            importance: #LOW
+            }
+        ]
+    NewStatus;
+     
+    @UI.lineItem: [
+            {
+            position: 60,
+            importance: #LOW
+            }
+        ]
+    Text;
+
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalCreatedBy;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalCreatedAt;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalLastChangedBy;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalLastChangedAt;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LastChangedAt;
+
+    @UI.hidden: true
+    _Incident;
+}

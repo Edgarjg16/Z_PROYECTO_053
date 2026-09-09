@@ -1,0 +1,119 @@
+@Metadata.layer: #CORE
+
+    @UI.headerInfo: 
+        { 
+        typeName: 'Incident',
+        typeNamePlural: 'Incidents',
+        title: { 
+            value: 'IncidentId'
+                 }
+        }
+
+    @UI.presentationVariant: [ { 
+            sortOrder: [ { 
+                by: 'IncidentId',
+                direction: #ASC
+
+                         } ]
+                             } ]
+
+annotate entity ZI_INCT_053
+    with 
+{ 
+    @UI.facet: [ 
+        { 
+    		id: 'IncidentData',
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Incident Data',
+    		position: 10
+    	},
+        {
+            id: 'History',
+            type: #LINEITEM_REFERENCE,
+            label: 'Modification History',
+            targetElement: '_History',
+            position: 20
+        }
+    		  
+    		]
+    		
+    @UI.lineItem: [
+    {
+        position: 5,
+        type: #FOR_ACTION,
+        dataAction: 'changeStatus',
+        label: 'Change Status'
+    }
+    ]
+    @UI.identification: [
+        {
+            position: 5,
+            type: #FOR_ACTION,
+            dataAction: 'changeStatus',
+            label: 'Change Status'
+        }
+    ]    
+    IncUuid;
+
+    @UI.lineItem: [ { position: 10,
+                      importance: #MEDIUM
+                  } ]
+    @UI.selectionField: [{ position: 10 }]
+    IncidentId;
+
+    @UI.lineItem: [
+            {
+                position: 20,
+                importance: #LOW
+            }
+        ]
+    @Consumption.filter.hidden: true
+    Title;
+    
+    @UI.lineItem: [
+            {
+                position: 30,
+                importance: #LOW
+            }
+        ]
+    @Consumption.filter.hidden: true
+    Description;
+
+    @UI.lineItem: [
+            {
+                position: 40,
+                importance: #LOW
+            }
+        ]
+    Status;
+
+    @UI.lineItem: [
+            {
+                position: 50,
+                importance: #LOW
+            }
+        ]
+    Priority;
+
+        
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalCreatedBy;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalCreatedAt;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalLastChangedBy;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LocalLastChangedAt;
+     
+    @UI.hidden: true
+    @Consumption.filter.hidden: true
+    LastChangedAt;
+
+}
