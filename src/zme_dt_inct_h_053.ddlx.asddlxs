@@ -9,17 +9,17 @@
         value: 'HisId'
                 }
         }
- 
+ 
 @UI.presentationVariant: [{
 sortOrder: [{
                 by: 'HisId',
                 direction: #ASC
             }]
 }]
- 
+ 
 annotate entity zi_dt_inct_h_053
 with
-{     
+{     
     @UI.lineItem: [
             {
             position: 10,
@@ -29,7 +29,7 @@ with
     @UI.hidden: true
     @Consumption.filter.hidden: true
     HisUuid;
-     
+     
     @UI.lineItem: [
             {
             position: 20,
@@ -63,7 +63,7 @@ with
             }
         ]
     NewStatus;
-     
+     
     @UI.lineItem: [
             {
             position: 60,
@@ -75,23 +75,22 @@ with
     @UI.hidden: true
     @Consumption.filter.hidden: true
     LocalCreatedBy;
-     
+     
     @UI.hidden: true
     @Consumption.filter.hidden: true
     LocalCreatedAt;
-     
+     
     @UI.hidden: true
     @Consumption.filter.hidden: true
     LocalLastChangedBy;
-     
+     
     @UI.hidden: true
     @Consumption.filter.hidden: true
     LocalLastChangedAt;
-     
+     
     @UI.hidden: true
     @Consumption.filter.hidden: true
     LastChangedAt;
-
     @UI.hidden: true
     _Incident;
 }

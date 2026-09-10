@@ -22,11 +22,11 @@ annotate entity ZI_INCT_053
 { 
     @UI.facet: [ 
         { 
-    		id: 'IncidentData',
+            id: 'IncidentData',
             type: #IDENTIFICATION_REFERENCE,
             label: 'Incident Data',
-    		position: 10
-    	},
+            position: 10
+        },
         {
             id: 'History',
             type: #LINEITEM_REFERENCE,
@@ -34,9 +34,9 @@ annotate entity ZI_INCT_053
             targetElement: '_History',
             position: 20
         }
-    		  
-    		]
-    		
+              
+            ]
+            
     @UI.lineItem: [
     {
         position: 5,

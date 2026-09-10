@@ -3,13 +3,11 @@ strict ( 2 );
 
 define behavior for ZI_INCT_053 alias Incident
 persistent table zdt_inct_053
-with additional save
 //draft table zdt_inct_053D
 //with draft
-
 lock master
 authorization master ( instance )
-//etag master LocalLastChangetAt
+etag master LocalLastChangedAt
 {
   create ( authorization : global );
   update;
@@ -19,7 +17,19 @@ authorization master ( instance )
 
   determination createHistory on save { create; }
 
-  action changeStatus
+  validation validateMandatoryFields
+     on save { create; update; }
+
+  validation validateDates on save
+  {
+      create;
+      update;
+  }
+
+  validation validateResponsible
+     on save { create; update; }
+
+    action changeStatus
             parameter ZA_CHANGE_STATUS_053
 //            features : instance
 //            authorization : update
@@ -45,7 +55,7 @@ authorization master ( instance )
 
   association _History { create; }
 
-  mapping for zdt_inct_053
+    mapping for zdt_inct_053
     {
         IncUuid = inc_uuid;
         IncidentId = incident_id;
@@ -61,14 +71,13 @@ authorization master ( instance )
         LocalLastChangedAt = local_last_changed_at;
         LastChangedAt = last_changed_at;
     }
-
 }
 
 define behavior for zi_dt_inct_h_053 alias History
 persistent table zdt_inct_h_053
 lock dependent by _Incident
 authorization dependent by _Incident
-//etag master <field_name>
+etag master LocalLastChangedAt
 {
 //  update;
 //  delete;
