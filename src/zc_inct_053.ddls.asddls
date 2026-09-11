@@ -2,7 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'DD ZI_INCT_053'
 @Metadata.ignorePropagatedAnnotations: true
-define view entity ZC_INCT_053 as select from ZI_INCT_053
+define root view entity ZC_INCT_053 as select from ZI_INCT_053
 {
     key IncUuid,
     IncidentId,
